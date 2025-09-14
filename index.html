@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>LeafTrails - Eco-friendly journeys for a greener tomorrow</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />   
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            darkMode: 'class',
+            theme: {
+              extend: {
+                colors: {
+                  'eco-green': {
+                    light: '#6EE7B7',
+                    DEFAULT: '#34D399',
+                    dark: '#10B981',
+                  },
+                  'eco-blue': {
+                    light: '#7DD3FC',
+                    DEFAULT: '#38BDF8',
+                    dark: '#0EA5E9',
+                  },
+                },
+                animation: {
+                  'fade-in': 'fadeIn 0.5s ease-in-out',
+                  'slide-in': 'slideIn 0.5s ease-in-out',
+                },
+                keyframes: {
+                  fadeIn: {
+                    '0%': { opacity: '0' },
+                    '100%': { opacity: '1' },
+                  },
+                  slideIn: {
+                    '0%': { transform: 'translateY(20px)', opacity: '0' },
+                    '100%': { transform: 'translateY(0)', opacity: '1' },
+                  },
+                },
+              },
+            },
+          }
+        </script>
+      <!-- Added Babel for in-browser JSX/TSX transpilation -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "recharts": "https://aistudiocdn.com/recharts@^3.2.0",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+    <body id="page-top">
+        <div id="frontpage-container">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="#page-top">
+                        <img src="assets/img/logo.png" alt="Logo" style="height:70px;">
+                    </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#projects">Summary</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                            <li class="nav-item"><a id="signin-btn" class="nav-link" href="#">SignIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Masthead-->
+            <header class="masthead">
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">LeafTrails</h1>
+                            <h2 class="text-white-50 mx-auto mt-2 mb-5">Eco-friendly journeys for a greener tomorrow</h2>
+                            <a id="get-started-btn" class="btn btn-primary" href="#">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About-->
+            <section class="about-section text-center" id="about">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="text-white mb-4">About LeafTrails</h2>
+                            <p class="text-white-50">
+                                LeafTrails is built on the belief that travel should be smarter, greener, and more sustainable. Our platform not only inspires eco-friendly journeys but also integrates real-time traffic and pollution data to guide you toward cleaner, faster routes. By combining technology with responsibility, we help travelers make better choices — reducing congestion, lowering emissions, and making every trip a step closer to a sustainable future
+                            </p>
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+                </div>
+            </section>
+            <!-- Projects-->
+            <section class="projects-section bg-light" id="projects">
+                <div class="container px-4 px-lg-5">
+                    <!-- Featured Project Row-->
+                    <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                        <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/bg-masthead.jpg" alt="..." /></div>
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="featured-text text-center text-lg-left">
+                                <h4>Shoreline</h4>
+                                <p class="text-black-50 mb-0">Every journey has a shoreline – a place where land meets water, and nature whispers balance. At LeafTrails, Shoreline is more than a destination; it’s a reminder to pause, breathe, and travel gently. Like the meeting of waves and sand, we believe travel and sustainability should flow together in harmony. Discover eco-travel tips, mindful journeys, and stories that inspire you to explore responsibly – leaving only footprints, and carrying only memories.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project One Row-->
+                    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                        <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-left">
+                                        <h4 class="text-white">Connecting People & Places</h4>
+                                        <p class="mb-0 text-white-50">"At LeafTrails, every journey matters — from daily commutes to intercity trips and tourism adventures. We inspire greener, smarter, and more mindful travel choices, helping you reduce your footprint and explore sustainably. Travel responsibly, and let every mile be a step toward a greener tomorrow."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Two Row-->
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="..." /></div>
+                        <div class="col-lg-6 order-lg-first">
+                            <div class="bg-black text-center h-100 project">
+                                <div class="d-flex h-100">
+                                    <div class="project-text w-100 my-auto text-center text-lg-right">
+                                        <h4 class="text-white">Multi-Mode Mobility</h4>
+                                        <p class="mb-0 text-white-50">"LeafTrails supports all modes of travel — walking, cycling, buses, trains, carpooling, and private vehicles. By encouraging smarter choices and promoting eco-friendly options, we make commuting simpler, cleaner, and more connected. Whether it’s your daily walk, a cycling route, or hopping onto public transit, every step counts toward building a sustainable future."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Signup-->
+            <section class="signup-section" id="signup">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-10 col-lg-8 mx-auto text-center">
+                            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                        
+                            <!-- to get an API token!-->
+                            <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+                                <div class="row input-group-newsletter">
+                                    <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                                    <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                                </div>
+                                <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:required">An email is required.</div>
+                                <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.</div>
+                                <!-- Submit success message-->
+                            
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3 mt-2 text-white">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        To activate this form, sign up at
+                                        <br />
+                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                           <!-- Submit Error message -->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact-->
+            <section class="contact-section bg-black">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Address</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50">Ghaziabad</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-envelope text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Email</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50"><a href="#!">name@yourdomain.com</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="card py-4 h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                    <h4 class="text-uppercase m-0">Phone</h4>
+                                    <hr class="my-4 mx-auto" />
+                                    <div class="small text-black-50">+919999999999</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social d-flex justify-content-center">
+                        <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer-->
+            <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; LeafTrails 2025</div></footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="js/scripts.js"></script>
+            <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        </div>
+        <div id="root" class="hidden"></div>
+        <script type="text/babel" data-type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
